@@ -32,7 +32,7 @@ local function getexploit()
   return exploit
 end
 
-local version = " Software version: v1.3"
+local version = " Software version: v1.4"
 local httpservice = game:GetService('HttpService')
 local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
 local function webhook(msg)
@@ -59,7 +59,7 @@ local RS = Game:GetService("ReplicatedStorage");
 local tempTable = {}
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 local inDungeon = false;
-local Main = library:CreateWindow("Sword Factory X v1.3")
+local Main = library:CreateWindow("Sword Factory X v1.4")
 local Player = Main:CreateFolder("Player")
 local AutoFarm = Main:CreateFolder("AutoFarm")
 local Credits = Main:CreateFolder("Credits")
@@ -153,6 +153,20 @@ AutoFarm:Label("Adds souls from killing mobs to soul tank automatically.",{
     TextColor = Color3.fromRGB(0,0,0);
     BgColor = Color3.fromRGB(69,69,69);
 })
+local defaultTool
+AutoFarm:Button("Pick Sword",function()
+    local success, fail = pcall(function()
+        local tmpii = p.Character:FindFirstChild("Sword").Config.ITEMID.Value;
+        defaultTool = tmpii;
+    end)
+end)
+AutoFarm:Label("Hold a sword and press the button to default to it.",{
+    TextSize = 14;
+    TextColor = Color3.fromRGB(0,0,0);
+    BgColor = Color3.fromRGB(69,69,69);
+})
+
+
 AutoFarm:Toggle("Auto Dungeon",function(bool)
     shared.toggle = bool;
     if bool == true then autodungeon = true else autodungeon = false end
@@ -335,19 +349,29 @@ function HasABody2(chest)
 end
 
 function EquipBestTool()
-    p = getPlayer()
-    local Backpack = p.Backpack
-    local tmpTable = {}
-    for i,v in pairs(Backpack:GetChildren()) do
-        table.insert(tmpTable,v.Config.Worth.Value)
-    end
-    table.sort(tmpTable,function(a,b)
-	    return a > b
-    end)
-    for i,v in pairs(Backpack:GetChildren()) do
-        if v.Config.Worth.Value == tmpTable[1] then
-            p.Character.Humanoid:EquipTool(v)
-        end
+    if defaultTool ~= nil then
+            local Backpack = p.Backpack
+            for i,v in pairs(Backpack:GetChildren()) do
+                if v.Config.ITEMID.Value == defaultTool then
+                    p.Character.Humanoid:EquipTool(v)
+                end
+            end
+        
+        else
+            p = getPlayer()
+            local Backpack = p.Backpack
+            local tmpTable = {}
+            for i,v in pairs(Backpack:GetChildren()) do
+                table.insert(tmpTable,v.Config.Worth.Value)
+            end
+            table.sort(tmpTable,function(a,b)
+	            return a > b
+            end)
+            for i,v in pairs(Backpack:GetChildren()) do
+                if v.Config.Worth.Value == tmpTable[1] then
+                    p.Character.Humanoid:EquipTool(v)
+                end
+            end
     end
 end
 
