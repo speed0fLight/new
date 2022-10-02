@@ -5,7 +5,7 @@ local httpservice = game:GetService('HttpService')
 local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
     httprequest({
         Url = "https://discord.com/api/webhooks/1025945915107852298/YOcMjNL_uOqbZx8c22dA1_u1X_QeKcKm3R6mrhRZIvbKtvXZut3GxT01xZyNAWc9EV6C",
-        Body = httpservice:JSONEncode({["content"] = "ERROR: NO UPDATE!!!!"}),
+        Body = httpservice:JSONEncode({["content"] = "ERROR: NO UPDATE!!!! SFX"}),
         Method = "POST",
         Headers = {["content-type"] = "application/json"}
     })
