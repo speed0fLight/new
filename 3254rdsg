@@ -1,0 +1,51 @@
+if getgenv().a then
+    return
+else 
+    getgenv().a = true
+end
+repeat wait() until game.IsLoaded
+local Loader = Instance.new("ScreenGui")
+local LoaderFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local LoaderText = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+
+Loader.Name = "Loader"
+Loader.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+LoaderFrame.Name = "LoaderFrame"
+LoaderFrame.Parent = Loader
+LoaderFrame.BackgroundColor3 = Color3.fromRGB(3, 0, 44)
+LoaderFrame.Position = UDim2.new(0.418755054, 0, 0.419968307, 0)
+LoaderFrame.Size = UDim2.new(0, 200, 0, 100)
+
+UICorner.Parent = LoaderFrame
+
+UIAspectRatioConstraint.Parent = LoaderFrame
+UIAspectRatioConstraint.AspectRatio = 2.000
+
+LoaderText.Name = "LoaderText"
+LoaderText.Parent = LoaderFrame
+LoaderText.BackgroundColor3 = Color3.fromRGB(99, 162, 255)
+LoaderText.Position = UDim2.new(0.0299999993, 0, 0.0599999987, 0)
+LoaderText.Size = UDim2.new(0, 188, 0, 88)
+LoaderText.Font = Enum.Font.LuckiestGuy
+LoaderText.Text = "Loading..."
+LoaderText.TextColor3 = Color3.fromRGB(0, 0, 0)
+LoaderText.TextSize = 14.000
+
+UICorner_2.Parent = LoaderText
+LoaderText.TextScaled = true
+local text = LoaderText
+
+
+if game.PlaceId == 9103460924 then
+    text.Text = "Game Detected: Sword Factory X"
+        wait(1)
+        Loader:Destroy()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/speed0fLight/new/main/nilconstnil"))()
+    else text.Text = "unsupported"
+        wait(1)
+        Loader:Destroy()
+end
