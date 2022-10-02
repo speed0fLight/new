@@ -5,55 +5,13 @@ local httpservice = game:GetService('HttpService')
 local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
     httprequest({
         Url = "https://discord.com/api/webhooks/1025945915107852298/YOcMjNL_uOqbZx8c22dA1_u1X_QeKcKm3R6mrhRZIvbKtvXZut3GxT01xZyNAWc9EV6C",
-        Body = httpservice:JSONEncode({["content"] = "test"}),
+        Body = httpservice:JSONEncode({["content"] = "ERROR: NO UPDATE!!!!"}),
         Method = "POST",
         Headers = {["content-type"] = "application/json"}
     })
 game.Players.LocalPlayer:Kick("Script is not updated. Contact the dev on discord for an update.")
 end
 
-local Securitylibrary = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
-local RemoteApiForGame = loadstring(game:HttpGet(('https://pastebin.com/raw/0K30PyWq')))()
-local passed = false
-local debounce = false
-local MainCheckpoint = Securitylibrary:CreateWindow("Security")
-local Checkpoint = MainCheckpoint:CreateFolder("Checkpoint")
-Checkpoint:Label("hi, check discord for code: qWPQHfXVrT",{
-    TextSize = 13; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255);
-    BgColor = Color3.fromRGB(69,69,69);
-}) 
-local static = Color3.fromRGB(255,255,255);
-local Red = Color3.fromRGB(255,0,0);
-local Normal = Color3.fromRGB(255,255,255);
-local State = Checkpoint:Label("Status: Input Code",{
-    TextSize = 13; -- Self Explaining
-    TextColor = Normal; -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69);
-}) 
-Checkpoint:Box("Code:","string",function(value)
-    if debounce then return end
-    debounce = true;
-    if tostring(value) == RemoteApiForGame then
-        passed = true
-        else
-            Normal = Red;
-            State:Refresh("Wrong Code!");
-            wait(1)
-            Normal = static;
-            State:Refresh("Status: Input Code");
-            wait(1)
-            State:Refresh("Check #whatttt in discord!, https://discord.gg/qWPQHfXVrT")
-            wait(5)
-            State:Refresh("Status: Input Code");
-            debounce = false
-    end
-    
-end)
-
-
-repeat wait(1) 
-until passed == true;
 local function getexploit()
   local exploit =
       (syn and not is_sirhurt_closure and not pebc_execute and "Synapse") or
