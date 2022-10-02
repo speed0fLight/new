@@ -1,6 +1,7 @@
+
 local t = game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Version.Text
 local t2 = string.split(t,"Server Version: v")
-if t2[2] ~= "10.9" then
+if t2[2] ~= "10.97" then
 local httpservice = game:GetService('HttpService')
 local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
     httprequest({
@@ -227,6 +228,14 @@ AutoFarm:DestroyGui()
 
 
 game:GetService("RunService").RenderStepped:Connect(function()
+    local args = {
+    [1] = 0,
+    [2] = "UIServer",
+    [3] = "RefreshSpeed",
+    [4] = {}
+}
+
+game:GetService("ReplicatedStorage").Framework.RemoteFunction:InvokeServer(unpack(args))
   local p = getPlayer()
   if game.Workspace:FindFirstChild(p.Name) ~= nil then
   p.Character.Humanoid.WalkSpeed = ws
