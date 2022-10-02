@@ -1,4 +1,4 @@
-local t = game:GetService("Players")["0yn4"].PlayerGui.MainGui.Version.Text
+local t = game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Version.Text
 local t2 = string.split(t,"Server Version: v")
 if t2[2] ~= "10.9" then
 local httpservice = game:GetService('HttpService')
