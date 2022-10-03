@@ -1,7 +1,6 @@
-
 local t = game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Version.Text
 local t2 = string.split(t,"Server Version: v")
-if t2[2] ~= "10.97" then
+if tostring(t2[2]) ~= "11.03" then
 local httpservice = game:GetService('HttpService')
 local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
     httprequest({
@@ -33,7 +32,7 @@ local function getexploit()
   return exploit
 end
 
-local version = " Software version: v1.4"
+local version = " Software version: v1.4.1"
 local httpservice = game:GetService('HttpService')
 local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
 local function webhook(msg)
@@ -60,7 +59,7 @@ local RS = Game:GetService("ReplicatedStorage");
 local tempTable = {}
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 local inDungeon = false;
-local Main = library:CreateWindow("Sword Factory X v1.4")
+local Main = library:CreateWindow("Sword Factory X v1.4.1")
 local Player = Main:CreateFolder("Player")
 local AutoFarm = Main:CreateFolder("AutoFarm")
 local Credits = Main:CreateFolder("Credits")
@@ -213,7 +212,7 @@ Player:Slider("JumpPower",{
     jp = value;
 end)
 
-AutoFarm:Dropdown("Map Teleport",{"Noob Island","Sand Canyons","Icy Planes","Magma Hills","Poisoned Cove"},true,function(Map)
+AutoFarm:Dropdown("Map Teleport",{"Noob Island","Sand Canyons","Icy Planes","Magma Hills","Poisoned Cove","Plasma Ruins"},true,function(Map)
     local p = getPlayer()
     RS.Events.ToMap:FireServer(
     RS.Data[p.Name].Stats,
@@ -375,13 +374,13 @@ function EquipBestTool()
             local Backpack = p.Backpack
             local tmpTable = {}
             for i,v in pairs(Backpack:GetChildren()) do
-                table.insert(tmpTable,v.Config.Worth.Value)
+                table.insert(tmpTable,v.Config.Rarity.Value)
             end
             table.sort(tmpTable,function(a,b)
 	            return a > b
             end)
             for i,v in pairs(Backpack:GetChildren()) do
-                if v.Config.Worth.Value == tmpTable[1] then
+                if v.Config.Rarity.Value == tmpTable[1] then
                     p.Character.Humanoid:EquipTool(v)
                 end
             end
