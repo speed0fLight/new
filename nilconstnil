@@ -225,10 +225,8 @@ end)
 
 
 AutoFarm:DestroyGui()
-
-
-game:GetService("RunService").RenderStepped:Connect(function()
-    local args = {
+function disableanticheat()
+	    local args = {
     [1] = 0,
     [2] = "UIServer",
     [3] = "RefreshSpeed",
@@ -236,6 +234,12 @@ game:GetService("RunService").RenderStepped:Connect(function()
 }
 
 game:GetService("ReplicatedStorage").Framework.RemoteFunction:InvokeServer(unpack(args))
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+if autodungeon == true or inDungeon == true or ws > 16 or jp > 50 then
+	disableanticheat()
+end
   local p = getPlayer()
   if game.Workspace:FindFirstChild(p.Name) ~= nil then
   p.Character.Humanoid.WalkSpeed = ws
