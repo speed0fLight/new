@@ -44,7 +44,7 @@ if game.PlaceId == 9103460924 then
     text.Text = "Game Detected: Sword Factory X"
         wait(1)
         Loader:Destroy()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/speed0fLight/new/main/nilconstnil"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/speed0fLight/new/main/nilconstnilsxfxsxfx"))()
 elseif game.PlaceId == 9195713767 then
 text.Text = "Game Detected: Sword Haven"
         wait(1)
