@@ -60,6 +60,11 @@ text.Text = "Game Detected: Sword Haven"
         wait(1)
         Loader:Destroy()
  loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/arssim'))()
+ elseif game.PlaceId == 6961824067 then
+     text.Text = "Game Detected: Fling Things and People"
+        wait(1)
+        Loader:Destroy()
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/flingtap'))()
  else text.Text = "Unsupported"
         wait(1)
         Loader:Destroy()
