@@ -65,6 +65,11 @@ text.Text = "Game Detected: Sword Haven"
         wait(1)
         Loader:Destroy()
  loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/flingtap'))()
+ elseif game.PlaceId == 7047488135 then
+     text.Text = "Game Detected: Speed Run Simulator"
+        wait(1)
+        Loader:Destroy()
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/spdrcinNILCNCDN'))()
  else text.Text = "Unsupported"
         wait(1)
         Loader:Destroy()
