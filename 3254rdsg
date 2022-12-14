@@ -70,6 +70,11 @@ text.Text = "Game Detected: Sword Haven"
         wait(1)
         Loader:Destroy()
  loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/spdrcinNILCNCDN'))()
+  elseif game.PlaceId == 6516141723 then
+     text.Text = "Game Detected: Doors"
+        wait(1)
+        Loader:Destroy()
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/dorsnilconst'))()
  else text.Text = "Unsupported"
         wait(1)
         Loader:Destroy()
