@@ -68,13 +68,34 @@ text.Text = "Game Detected: Sword Haven"
  elseif game.PlaceId == 7047488135 then
      text.Text = "Game Detected: Speed Run Simulator"
         wait(1)
-        Loader:Destroy()
+        Loader:Destroy()      
  loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/spdrcinNILCNCDN'))()
+ 
   elseif game.PlaceId == 6516141723 then
      text.Text = "Game Detected: Doors"
         wait(1)
         Loader:Destroy()
+        
  loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/dorsnilconst'))()
+ 
+ elseif game.PlaceId == 1962086868 then
+     text.Text = "Game Detected: Tower Of Hell"
+        wait(1)
+        Loader:Destroy()
+        
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/TOH'))()
+ 
+ elseif game.PlaceId == 9625096419 then
+     text.Text = "Game Detected: Tapper Simulator"
+        wait(1)
+        Loader:Destroy()
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/Tappersim'))()
+
+ elseif game.PlaceId == 3652625463 then
+     text.Text = "Game Detected: Lifting Simulator"
+        wait(1)
+        Loader:Destroy()
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/speed0fLight/new/main/Liftingsim'))()
  else text.Text = "Unsupported"
         wait(1)
         Loader:Destroy()
